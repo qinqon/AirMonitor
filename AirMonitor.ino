@@ -12,7 +12,8 @@ void setup()
 
   myMHZ19.begin(&mySerial);
 
-  myMHZ19.disableAutoBaseCalibration();
+  myMHZ19.setMeasuringRange(Mhz19MeasuringRange::Ppm_5000);
+  myMHZ19.disableAutoBaseCalibration(); // Disable auto-calibration for constant indoor use
 }
 
 void loop()
