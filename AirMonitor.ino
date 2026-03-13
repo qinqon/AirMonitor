@@ -4,11 +4,14 @@ Mhz19 myMHZ19;
 
 HardwareSerial mySerial(2);   // UART2
 
+const int MHZ19_RX_PIN = 17;
+const int MHZ19_TX_PIN = 16;
+
 void setup()
 {
   Serial.begin(115200);
 
-  mySerial.begin(9600, SERIAL_8N1, 16, 17);
+  mySerial.begin(9600, SERIAL_8N1, MHZ19_RX_PIN, MHZ19_TX_PIN);
 
   myMHZ19.begin(&mySerial);
 
