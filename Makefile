@@ -13,4 +13,4 @@ upload: compile
 .PHONY: all compile upload monitor
 
 monitor:
-	arduino-cli monitor -p $(PORT)
+	arduino-cli monitor -p $(PORT) --config baudrate=115200
