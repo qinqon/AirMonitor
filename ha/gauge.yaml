@@ -1,0 +1,10 @@
+type: gauge
+entity: sensor.air_monitor_co2_level # <<-- CHANGE THIS TO YOUR ACTUAL CO2 SENSOR ENTITY ID
+name: Indoor CO2 Level
+min: 0
+max: 2000 # A common max for display, adjust if your sensor reads higher often
+severity:
+  green: 800  # Good: CO2 below 800 ppm
+  yellow: 1200 # Medium: CO2 between 800 and 1200 ppm
+  red: 2000   # Bad: CO2 above 1200 ppm (up to max)
+needle: true
