@@ -17,11 +17,19 @@ void setup()
 
 void loop()
 {
-  int CO2 = myMHZ19.getCarbonDioxide();
+  if (myMHZ19.isReady()) {
+    int CO2 = myMHZ19.getCarbonDioxide();
 
-  Serial.print("CO2: ");
-  Serial.print(CO2);
-  Serial.println(" ppm");
+    if (CO2 < 0) {
+      Serial.println("Error: CO2 read returned -1 (communication issue after warmup).");
+    } else {
+      Serial.print("CO2: ");
+      Serial.print(CO2);
+      Serial.println(" ppm");
+    }
+  } else {
+    Serial.println("Sensor warming up (please wait)...");
+  }
 
   delay(2000);
 }
