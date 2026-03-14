@@ -19,7 +19,7 @@ esphome-compile:
 	esphome compile air_monitor.yaml
 
 esphome-upload: esphome-compile
-	esphome upload air_monitor.yaml --device $(PORT)
+	esphome upload air_monitor.yaml
 
 esphome-logs:
-	esphome logs air_monitor.yaml --device $(PORT)
+	esphome logs air_monitor.yaml
